@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo44wfcjhlwdt"]
+
+[ext_resource type="Texture2D" uid="uid://b58us5tipw0g6" path="res://assets/Board.png" id="1_jrqwl"]
+[ext_resource type="Script" path="res://scripts/game_board.gd" id="1_okjp8"]
+[ext_resource type="PackedScene" uid="uid://bbqbquq1je2j2" path="res://scenes/store.tscn" id="2_nnj75"]
+[ext_resource type="PackedScene" uid="uid://c4uwi6pjif1is" path="res://scenes/circle.tscn" id="3_704q7"]
+
+[node name="Game Board" type="Node2D" node_paths=PackedStringArray("store_1", "store_2")]
+script = ExtResource("1_okjp8")
+stones_per_circle = 4
+store_1 = NodePath("Player 1/Store")
+store_2 = NodePath("Player 2/Store")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.81, 0.5994, 0.3888, 1)
+texture = ExtResource("1_jrqwl")
+
+[node name="Player 1" type="Node2D" parent="."]
+
+[node name="Store" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("2_nnj75")]
+position = Vector2(0, -289)
+rotation = 3.14159
+
+[node name="Circle_1" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, 207)
+
+[node name="Circle_2" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, 125)
+
+[node name="Circle_3" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, 42)
+
+[node name="Circle_4" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, -36)
+
+[node name="Circle_5" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, -118)
+
+[node name="Circle_6" parent="Player 1" groups=["Player1Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(42, -202)
+
+[node name="Player 2" type="Node2D" parent="."]
+
+[node name="Store" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("2_nnj75")]
+position = Vector2(0, 290)
+
+[node name="Circle_1" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, -202)
+rotation = -4.71239
+
+[node name="Circle_2" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, -120)
+rotation = -4.71239
+
+[node name="Circle_3" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, -37)
+rotation = -4.71239
+
+[node name="Circle_4" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, 41)
+rotation = -4.71239
+
+[node name="Circle_5" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, 123)
+rotation = -4.71239
+
+[node name="Circle_6" parent="Player 2" groups=["Player2Circles"] instance=ExtResource("3_704q7")]
+position = Vector2(-42, 207)
+rotation = -4.71239

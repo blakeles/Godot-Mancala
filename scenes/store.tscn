@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbqbquq1je2j2"]
+
+[ext_resource type="Texture2D" uid="uid://13eh44gxhiom" path="res://assets/Store.png" id="1_1sh81"]
+[ext_resource type="Script" path="res://scripts/store.gd" id="1_dtvy2"]
+
+[node name="Store" type="Node2D"]
+script = ExtResource("1_dtvy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.768627, 0.568627, 0.368627, 1)
+texture = ExtResource("1_1sh81")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 70.0
+offset_right = 20.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
